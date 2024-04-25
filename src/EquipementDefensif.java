@@ -1,14 +1,28 @@
-public class EquipementDefensif {
-    String bouclier;
-    String philtre;
-    String nom;
-    int level;
+import java.util.Scanner;
 
-    public EquipementDefensif(String bouclier, String philtre, String nom, int level) {
-        this.bouclier = bouclier;
-        this.philtre = philtre;
-        this.nom = nom;
-        this.level = level;
+public class EquipementDefensif {
+    String type;
+    String nom;
+    int niveauDefense;
+
+    public EquipementDefensif() {
+
     }
 
+    public EquipementDefensif(String type, String nom, int niveauDefense) {
+        this.type = type;
+        this.nom = nom;
+        this.niveauDefense = niveauDefense;
+    }
+
+
+    public void equipementDefensif(String type) {
+        if (type.equals("Magician")) {
+            System.out.println("Équipement Défensif : Philtre");
+        } else {
+            System.out.println("Équipement Défensif :Bouclier ");
+        }
+    }
 }
+
+

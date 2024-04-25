@@ -1,13 +1,11 @@
 public class EquipementOffensif {
-    String arme;
-    String sort;
+    String type;
+    int niveauAttaque;
     String nom;
-    int level;
 
-    public EquipementOffensif(String arme, String sort, String nom, int level) {
-        this.arme = arme;
-        this.sort = sort;
+    public EquipementOffensif(String type, int niveauAttaque,String nom) {
+        this.type = type;
         this.nom = nom;
-        this.level = level;
+        this.niveauAttaque = niveauAttaque;
     }
 }
