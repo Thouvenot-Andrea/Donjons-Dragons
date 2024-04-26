@@ -49,25 +49,25 @@
 //
 //                Scanner myObj2 = new Scanner(System.in);
 //                String character;
-//                System.out.println("Warrior or Magician");
+//                System.out.println("jeu.personnages.Warrior or jeu.personnages.Magician");
 //                character = myObj2.nextLine();
 //
 //
-//                if (character.equals("Magician")) {
-//                    Personnage Magician = new Personnage(userName, 6, 15, "sort", "philtre");
-//                    System.out.println("Nom :" + Magician.nom);
-//                    System.out.println("Niveau de vie : " + Magician.niveauDeVie);
-//                    System.out.println("Force d'attaque : " + Magician.forceDAttaque);
-//                    System.out.println("Equipement Offensif : " + Magician.equipementOffensif);
-//                    System.out.println("Equipement Défensif : " + Magician.equipementDefensif);
+//                if (character.equals("jeu.personnages.Magician")) {
+//                    Personnage jeu.personnages.Magician = new Personnage(userName, 6, 15, "sort", "philtre");
+//                    System.out.println("Nom :" + jeu.personnages.Magician.nom);
+//                    System.out.println("Niveau de vie : " + jeu.personnages.Magician.niveauDeVie);
+//                    System.out.println("Force d'attaque : " + jeu.personnages.Magician.forceDAttaque);
+//                    System.out.println("Equipement Offensif : " + jeu.personnages.Magician.equipementOffensif);
+//                    System.out.println("Equipement Défensif : " + jeu.personnages.Magician.equipementDefensif);
 //                    characterSelected = true;
-//                } else if (character.equals("Warrior")) {
-//                    Personnage Warrior = new Personnage(userName, 10, 10, "arme", "bouclier");
-//                    System.out.println("Nom :" + Warrior.nom);
-//                    System.out.println("Niveau de vie : " + Warrior.niveauDeVie);
-//                    System.out.println("Force d'attaque : " + Warrior.forceDAttaque);
-//                    System.out.println("Equipement Offensif : " + Warrior.equipementOffensif);
-//                    System.out.println("Equipement Défensif : " + Warrior.equipementDefensif);
+//                } else if (character.equals("jeu.personnages.Warrior")) {
+//                    Personnage jeu.personnages.Warrior = new Personnage(userName, 10, 10, "arme", "bouclier");
+//                    System.out.println("Nom :" + jeu.personnages.Warrior.nom);
+//                    System.out.println("Niveau de vie : " + jeu.personnages.Warrior.niveauDeVie);
+//                    System.out.println("Force d'attaque : " + jeu.personnages.Warrior.forceDAttaque);
+//                    System.out.println("Equipement Offensif : " + jeu.personnages.Warrior.equipementOffensif);
+//                    System.out.println("Equipement Défensif : " + jeu.personnages.Warrior.equipementDefensif);
 //                    characterSelected = true;
 //                } else {
 //                    System.out.println("Le personnage nest pas bon ");
