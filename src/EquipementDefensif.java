@@ -1,28 +1,73 @@
-import java.util.Scanner;
-
 public class EquipementDefensif {
-    String type;
-    String nom;
-    int niveauDefense;
-
-    public EquipementDefensif() {
-
-    }
-
-    public EquipementDefensif(String type, String nom, int niveauDefense) {
+        //attributes
+    private String type;
+    private int attaqueLevel;
+    private String name;
+        //constructor
+    public EquipementDefensif(String type, int niveauAttaque, String name){
         this.type = type;
-        this.nom = nom;
-        this.niveauDefense = niveauDefense;
+        this.attaqueLevel = niveauAttaque;
     }
-
-
-    public void equipementDefensif(String type) {
-        if (type.equals("Magician")) {
-            System.out.println("Équipement Défensif : Philtre");
-        } else {
-            System.out.println("Équipement Défensif :Bouclier ");
-        }
+        //getter
+    public String getType() {
+        return type;
+    }
+    public int getAttaqueLevel() {
+        return attaqueLevel;
+    }
+    public String getName() {
+        return name;
+    }
+        //setter
+    public void setType(String type) {
+        this.type = type;
+    }
+    public void setAttaqueLevel(int attaqueLevel) {
+        this.attaqueLevel = attaqueLevel;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+        //toString
+    public String toString(){
+        return type + " " + attaqueLevel + " " + name;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
