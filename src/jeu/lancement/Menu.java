@@ -60,6 +60,8 @@ public class Menu {
 
 
 
+
+
     // Méthode pour créer automatiquement un personnage par défaut
     private void createDefaultPerson() {
         System.out.println("Personnage créé automatiquement.");
