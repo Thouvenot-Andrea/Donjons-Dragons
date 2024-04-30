@@ -9,15 +9,20 @@ import jeu.personnages.Warrior;
 public class Menu {
     private Personnage personnage;
 
+
     public boolean menuGame() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Bienvenue dans Donjons & Dragons !");
-        while (true) {
+        boolean personnageCree = false;
+        boolean continuerJeu = true;
+        Game game = new Game(this); // Création d'une instance de la classe Game
+
+        while (continuerJeu) {
             System.out.println("1. Créer un personnage");
             System.out.println("2. Modifier un personnage");
             System.out.println("3. Info du personnage");
             System.out.println("4. Quitter le jeu");
-            System.out.println("5. Start");
+            System.out.println("5. Commencer le jeu");
+
             System.out.print("Choisissez une option : ");
             int choix = scanner.nextInt();
 
@@ -25,6 +30,7 @@ public class Menu {
                 switch (choix) {
                     case 1:
                         createPerson();
+                        personnageCree = true;
                         break;
                     case 2:
                         modifyPerson();
@@ -33,15 +39,31 @@ public class Menu {
                         infos();
                         break;
                     case 4:
-                        System.out.println("Merci d'avoir joué à Donjons & Dragons !");
-                        return false;
+                        System.out.println("À bientôt sur Donjons & Dragons  !");
+                        continuerJeu = false;
+                        break;
                     case 5:
-                        return true;
+                        if (personnageCree) {
+                            System.out.println("Le jeu commence !");
+                            game.movePlayer(); // Appel de la méthode movePlayer() de la classe Game
+                        } else {
+                            System.out.println("Vous devez d'abord créer un personnage avant de commencer le jeu.");
+                        }
+                        break;
                 }
             } else {
                 System.out.println("Choix invalide. Veuillez choisir une option valide.");
             }
         }
+        return false;
+    }
+
+
+
+    // Méthode pour créer automatiquement un personnage par défaut
+    private void createDefaultPerson() {
+        System.out.println("Personnage créé automatiquement.");
+        // Vous pouvez ajouter ici le code pour créer un personnage par défaut sans demander d'informations à l'utilisateur
     }
 
 
@@ -49,7 +71,7 @@ public class Menu {
         System.out.println(message);
     }
 
-    public void createPerson() {
+    public boolean createPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans Donjons & Dragons !");
         System.out.println("Entrez votre nom : ");
@@ -67,9 +89,11 @@ public class Menu {
                     break;
                 default:
                     System.out.println("Type invalide. Vous avez été déclaré comme Warrior par défaut.");
+                    return false;
             }
         }
         System.out.println("Vous êtes maintenant un " + personnage.getType());
+        return false;
     }
 
 
@@ -115,6 +139,13 @@ public class Menu {
             }
         }
     }
+
+
+    public Personnage getPersonnage() {
+        return personnage;
+    }
+
+
 }
 
 
