@@ -62,18 +62,6 @@ public class Menu {
         return false;
     }
 
-
-    // Méthode pour créer automatiquement un personnage par défaut
-    private void createDefaultPerson() {
-        System.out.println("Personnage créé automatiquement.");
-        // Vous pouvez ajouter ici le code pour créer un personnage par défaut sans demander d'informations à l'utilisateur
-    }
-
-
-    public void display(String message) {
-        System.out.println(message);
-    }
-
     public boolean createPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans Donjons & Dragons !");
@@ -143,6 +131,9 @@ public class Menu {
         }
     }
 
+    public void display(String message) {
+        System.out.println(message);
+    }
 }
 
 
