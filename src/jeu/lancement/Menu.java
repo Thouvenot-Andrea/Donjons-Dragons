@@ -14,7 +14,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         boolean personnageCree = false;
         boolean continuerJeu = true;
-        Game game = new Game(this); // Création d'une instance de la classe Game
+        Game game = new Game(this);
 
         while (continuerJeu) {
             System.out.println("1. Créer un personnage");
@@ -33,7 +33,11 @@ public class Menu {
                         personnageCree = true;
                         break;
                     case 2:
-                        modifyPerson();
+                        if (personnageCree) {
+                            modifyPerson();
+                        } else {
+                            System.out.println("Vous devez créer un personnage pour le modifier !");
+                        }
                         break;
                     case 3:
                         infos();
@@ -57,9 +61,6 @@ public class Menu {
         }
         return false;
     }
-
-
-
 
 
     // Méthode pour créer automatiquement un personnage par défaut
@@ -141,12 +142,6 @@ public class Menu {
             }
         }
     }
-
-
-    public Personnage getPersonnage() {
-        return personnage;
-    }
-
 
 }
 
