@@ -10,10 +10,10 @@ public class Personnage {
     private String equipementDefensif;
 
     //constructor
-    public Personnage() {
-
-    }
-
+//    public Personnage() {
+//
+//    }
+//
     public Personnage(String name) {
         this.name = name;
     }
@@ -42,7 +42,12 @@ public class Personnage {
     }
 
     public void setPv(int pv) {
-        this.pv = pv;
+        if (pv >= 0) {
+            this.pv = pv;
+        } else {
+            System.err.println("Erreur: Les points de vie doivent être positifs.");
+        }
+
     }
 
 
@@ -52,7 +57,11 @@ public class Personnage {
     }
 
     public void setDamage(int damage) {
-        this.damage = damage;
+        if (damage >= 0) {
+            this.damage = damage;
+        } else {
+            System.err.println("Erreur: Les dégâts doivent être positifs.");
+        }
     }
 
 
@@ -89,7 +98,7 @@ public class Personnage {
     // toString
     public String toString() {
         return "\n" +
-                "   Type: " + type + "\n" +
+//                "   Type: " + type + "\n" +
                 "   Name: " + name + "\n" +
                 "   Damage: " + damage + "\n" +
                 "   Pv: " + pv + "\n" +

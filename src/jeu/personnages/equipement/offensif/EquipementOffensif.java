@@ -1,4 +1,4 @@
-package jeu.personnages;
+package jeu.personnages.equipement.offensif;
 
 public class EquipementOffensif {
     //attributes

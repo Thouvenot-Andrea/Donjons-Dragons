@@ -2,6 +2,7 @@ package jeu.lancement;
 
 import java.util.Scanner;
 
+import jeu.PersonnageHorsPlateauException;
 import jeu.personnages.Mage;
 import jeu.personnages.Personnage;
 import jeu.personnages.Warrior;
@@ -49,29 +50,18 @@ public class Menu {
                     case 5:
                         if (personnageCree) {
                             System.out.println("Le jeu commence !");
-                            game.movePlayer(); // Appel de la méthode movePlayer() de la classe Game
-                        } else {
-                            System.out.println("Vous devez d'abord créer un personnage avant de commencer le jeu.");
+                            try {
+                                game.movePlayer();
+                            } catch (PersonnageHorsPlateauException e) {
+                                System.out.println(e.getMessage());
+                            }
                         }
-                        break;
                 }
             } else {
                 System.out.println("Choix invalide. Veuillez choisir une option valide.");
             }
         }
         return false;
-    }
-
-
-    // Méthode pour créer automatiquement un personnage par défaut
-    private void createDefaultPerson() {
-        System.out.println("Personnage créé automatiquement.");
-        // Vous pouvez ajouter ici le code pour créer un personnage par défaut sans demander d'informations à l'utilisateur
-    }
-
-
-    public void display(String message) {
-        System.out.println(message);
     }
 
     public boolean createPerson() {
@@ -143,6 +133,9 @@ public class Menu {
         }
     }
 
+    public void display(String message) {
+        System.out.println(message);
+    }
 }
 
 
