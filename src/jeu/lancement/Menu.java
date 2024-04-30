@@ -2,6 +2,7 @@ package jeu.lancement;
 
 import java.util.Scanner;
 
+import jeu.PersonnageHorsPlateauException;
 import jeu.personnages.Mage;
 import jeu.personnages.Personnage;
 import jeu.personnages.Warrior;
@@ -49,11 +50,12 @@ public class Menu {
                     case 5:
                         if (personnageCree) {
                             System.out.println("Le jeu commence !");
-                            game.movePlayer(); // Appel de la méthode movePlayer() de la classe Game
-                        } else {
-                            System.out.println("Vous devez d'abord créer un personnage avant de commencer le jeu.");
+                            try {
+                                game.movePlayer();
+                            } catch (PersonnageHorsPlateauException e) {
+                                System.out.println(e.getMessage());
+                            }
                         }
-                        break;
                 }
             } else {
                 System.out.println("Choix invalide. Veuillez choisir une option valide.");

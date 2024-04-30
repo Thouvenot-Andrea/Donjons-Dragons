@@ -1,4 +1,4 @@
-package jeu.personnages.equipement;
+package jeu.personnages.equipement.defensif;
 
 public class EquipementDefensif {
         //attributes
@@ -29,9 +29,7 @@ public class EquipementDefensif {
     public void setDefenceLevel(int attaqueLevel) {
         this.defenceLevel = defenceLevel;
     }
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+
         //toString
     public String toString(){
         return type + " " + defenceLevel + " " ;
