@@ -1,6 +1,6 @@
 package jeu.personnages;
 
-public class Personnage {
+public abstract class Personnage {
     //attributes
     private String name;
     private int pv;
@@ -10,12 +10,14 @@ public class Personnage {
     private String equipementDefensif;
 
     //constructor
-//    public Personnage() {
-//
-//    }
-//
+    public Personnage() {
+
+    }
+
     public Personnage(String name) {
         this.name = name;
+        this.pv = 10;
+        this.damage = 1;
     }
 
     public Personnage(String name, int pv, int damage) {
@@ -42,12 +44,7 @@ public class Personnage {
     }
 
     public void setPv(int pv) {
-        if (pv >= 0) {
             this.pv = pv;
-        } else {
-            System.err.println("Erreur: Les points de vie doivent être positifs.");
-        }
-
     }
 
 
@@ -57,11 +54,7 @@ public class Personnage {
     }
 
     public void setDamage(int damage) {
-        if (damage >= 0) {
-            this.damage = damage;
-        } else {
-            System.err.println("Erreur: Les dégâts doivent être positifs.");
-        }
+        this.damage = damage;
     }
 
 
