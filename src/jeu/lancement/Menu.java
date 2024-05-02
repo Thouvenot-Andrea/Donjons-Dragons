@@ -10,7 +10,7 @@ import jeu.personnages.Warrior;
 public class Menu {
     private Personnage personnage;
 
-
+// MENU
     public boolean menuGame() {
         Scanner scanner = new Scanner(System.in);
         boolean personnageCree = false;
@@ -18,36 +18,36 @@ public class Menu {
         Game game = new Game(this);
 
         while (continuerJeu) {
-            System.out.println("1. Créer un personnage");
-            System.out.println("2. Modifier un personnage");
-            System.out.println("3. Info du personnage");
-            System.out.println("4. Quitter le jeu");
-            System.out.println("5. Commencer le jeu");
+            System.out.println("1. Commencer le jeu");
+            System.out.println("2. Créer un personnage");
+            System.out.println("3. Modifier un personnage");
+            System.out.println("4. Info du personnage");
+            System.out.println("5. Quitter le jeu");
 
             System.out.print("Choisissez une option : ");
             int choix = scanner.nextInt();
 
             if (choix >= 1 && choix <= 5) {
                 switch (choix) {
-                    case 1:
+                    case 2:
                         createPerson();
                         personnageCree = true;
                         break;
-                    case 2:
+                    case 3:
                         if (personnageCree) {
                             modifyPerson();
                         } else {
                             System.out.println("Vous devez créer un personnage pour le modifier !");
                         }
                         break;
-                    case 3:
+                    case 4:
                         infos();
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("À bientôt sur Donjons & Dragons  !");
                         continuerJeu = false;
                         break;
-                    case 5:
+                    case 1:
                         if (personnageCree) {
                             System.out.println("Le jeu commence !");
                             try {
@@ -55,6 +55,9 @@ public class Menu {
                             } catch (PersonnageHorsPlateauException e) {
                                 System.out.println(e.getMessage());
                             }
+                        }
+                        else {
+                        System.out.println("Vous devez créer un personnage pour lancer une partie !");
                         }
                 }
             } else {
@@ -64,7 +67,8 @@ public class Menu {
         return false;
     }
 
-    public boolean createPerson() {
+// Création du personnage
+    public void createPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans Donjons & Dragons !");
         System.out.println("Entrez votre nom : ");
@@ -80,16 +84,12 @@ public class Menu {
                 case "MAGE":
                     personnage = new Mage(nom);
                     break;
-                default:
-                    System.out.println("Type invalide. Vous avez été déclaré comme Warrior par défaut.");
-                    return false;
             }
         }
         System.out.println("Vous êtes maintenant un " + personnage.getType());
-        return false;
     }
 
-
+// Afficher les infos du personnage
     public void infos() {
         if (personnage != null) {
             if (personnage instanceof Mage) {
@@ -103,13 +103,13 @@ public class Menu {
         }
     }
 
-
+// Modifier le personnage
     public void modifyPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Entrez votre nom : ");
         String name = input.nextLine().toUpperCase();
         while (true) {
-            System.out.println("Entre le type (Warrior ou MAGE): ");
+            System.out.println("Entre le type (WARRIOR ou MAGE): ");
             String type = input.nextLine().toUpperCase();
             System.out.println("Vous êtes maintenant un " + type);
             if (type.equals("WARRIOR") || type.equals("MAGE")) {
@@ -133,9 +133,40 @@ public class Menu {
         }
     }
 
+    //MESSAGE MAIN
+// Message de bienvue utilise dans le main.java
     public void display(String message) {
         System.out.println(message);
     }
+    //MESSAGE GAME
+// Affiche le déplacement de joueur
+    public void displacementPlayer(String message){
+        System.out.println(message);
+    }
+    // Affiche le sortie du plateau
+    public void offSet(String message){
+        System.out.println(message);
+    }
+    // Affiche  fin de la parti (Gagner)
+    public void end(String message){
+        System.out.println(message);
+    }
+    // affiche si le joueur veut rejouer
+    public void restart(String message){
+        System.out.println(message);
+    }
+    // affiche pour remercier le joueur
+    public void thanks(String message){
+        System.out.println(message);
+    }
+    public void exception(String message){
+        System.out.println(message);
+    }
+
+    public void enemyEncounter(String message) {
+        System.out.println(message);
+    }
 }
+
 
 
