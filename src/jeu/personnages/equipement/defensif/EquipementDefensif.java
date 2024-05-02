@@ -1,12 +1,12 @@
 package jeu.personnages.equipement.defensif;
 
-public class EquipementDefensif {
-        //attributes
+public abstract class EquipementDefensif {
+    //attributes
     private String type;
     private int defenceLevel;
 
-        //constructor
-    public EquipementDefensif(String type, int defenceLevel){
+    //constructor
+    public EquipementDefensif(String type, int defenceLevel) {
         this.type = type;
         this.defenceLevel = defenceLevel;
     }
@@ -19,20 +19,23 @@ public class EquipementDefensif {
     public String getType() {
         return type;
     }
+
     public int getDefenceLevel() {
         return defenceLevel;
     }
-        //setter
+
+    //setter
     public void setType(String type) {
         this.type = type;
     }
+
     public void setDefenceLevel(int attaqueLevel) {
         this.defenceLevel = defenceLevel;
     }
 
-        //toString
-    public String toString(){
-        return type + " " + defenceLevel + " " ;
+    //toString
+    public String toString() {
+        return type + " " + defenceLevel + " ";
     }
 }
 

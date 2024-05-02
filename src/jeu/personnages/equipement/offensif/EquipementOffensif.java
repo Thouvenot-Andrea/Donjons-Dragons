@@ -1,6 +1,6 @@
 package jeu.personnages.equipement.offensif;
 
-public class EquipementOffensif {
+public abstract class EquipementOffensif {
     //attributes
     private String type;
     private int attaqueLevel;
