@@ -1,6 +1,6 @@
 package jeu.plateau.dice;
 
-public class DiceOne extends Dice{
+public class DiceOne implements Dice {
 
     @Override
     public int lancer() {

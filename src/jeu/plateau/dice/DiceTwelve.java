@@ -2,7 +2,7 @@ package jeu.plateau.dice;
 
 import java.util.Random;
 
-public class DiceTwelve extends Dice {
+public class DiceTwelve implements Dice {
 
     private final Random random;
     public DiceTwelve(){
