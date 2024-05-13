@@ -29,7 +29,7 @@ public abstract class EquipementDefensif {
         this.type = type;
     }
 
-    public void setDefenceLevel(int attaqueLevel) {
+    public void setDefenceLevel(int defenceLevel) {
         this.defenceLevel = defenceLevel;
     }
 
