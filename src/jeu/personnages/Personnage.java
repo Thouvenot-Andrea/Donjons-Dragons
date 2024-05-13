@@ -91,12 +91,12 @@ public abstract class Personnage {
     // toString
     public String toString() {
         return "\n" +
-//                "   Type: " + type + "\n" +
+                "   Type: " + type + "\n" +
                 "   Name: " + name + "\n" +
                 "   Damage: " + damage + "\n" +
                 "   Pv: " + pv + "\n" +
-                "   Equipement Offensif: " + equipementOffensif + "\n" +
-                "   Equipement Defensif: " + equipementDefensif +
+                "   Equipement Offensif: " + (equipementOffensif != null ? equipementOffensif : "Aucun") + "\n" +
+                "   Equipement Defensif: " + (equipementDefensif != null ? equipementDefensif : "Aucun") +
                 "\n";
 
     }
