@@ -10,12 +10,12 @@ import jeu.personnages.Warrior;
 public class Menu {
     private Personnage personnage;
 
-// MENU
-    public boolean menuGame() {
+    // MENU
+    public boolean menuGame() throws PersonnageHorsPlateauException {
         Scanner scanner = new Scanner(System.in);
         boolean personnageCree = false;
         boolean continuerJeu = true;
-        Game game = new Game(this);
+        Game game = new Game();
 
         while (continuerJeu) {
             System.out.println("1. Commencer le jeu");
@@ -44,21 +44,17 @@ public class Menu {
                         infos();
                         break;
                     case 5:
-                        System.out.println("À bientôt sur Donjons & Dragons  !");
+                        System.out.println("À bientôt sur Donjons & Dragons !");
                         continuerJeu = false;
                         break;
                     case 1:
                         if (personnageCree) {
-                            System.out.println("Le jeu commence !");
-                            try {
-                                game.movePlayer();
-                            } catch (PersonnageHorsPlateauException e) {
-                                System.out.println(e.getMessage());
-                            }
+                            System.out.println("Le jeu commence, vous êtes commencer sur la case 1 : !");
+                            game.movePlayer();
+                        } else {
+                            System.out.println("Vous devez créer un personnage pour lancer une partie !");
                         }
-                        else {
-                        System.out.println("Vous devez créer un personnage pour lancer une partie !");
-                        }
+                        break; // Ajout de break pour sortir du switch case
                 }
             } else {
                 System.out.println("Choix invalide. Veuillez choisir une option valide.");
@@ -67,7 +63,7 @@ public class Menu {
         return false;
     }
 
-// Création du personnage
+    // Création du personnage
     public void createPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans Donjons & Dragons !");
@@ -89,7 +85,7 @@ public class Menu {
         System.out.println("Vous êtes maintenant un " + personnage.getType());
     }
 
-// Afficher les infos du personnage
+    // Afficher les infos du personnage
     public void infos() {
         if (personnage != null) {
             if (personnage instanceof Mage) {
@@ -103,7 +99,7 @@ public class Menu {
         }
     }
 
-// Modifier le personnage
+    // Modifier le personnage
     public void modifyPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Entrez votre nom : ");
@@ -133,6 +129,11 @@ public class Menu {
         }
     }
 
+    public String getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
+    }
+
     //MESSAGE MAIN
 // Message de bienvue utilise dans le main.java
     public void display(String message) {
@@ -140,30 +141,32 @@ public class Menu {
     }
     //MESSAGE GAME
 // Affiche le déplacement de joueur
-    public void displacementPlayer(String message){
+    public void displacementPlayer(String message) {
         System.out.println(message);
     }
-    // Affiche le sortie du plateau
-    public void offSet(String message){
-        System.out.println(message);
-    }
+
     // Affiche  fin de la parti (Gagner)
-    public void end(String message){
+    public void end(String message) {
         System.out.println(message);
     }
     // affiche si le joueur veut rejouer
-    public void restart(String message){
+    public void restart(String message) {
         System.out.println(message);
     }
     // affiche pour remercier le joueur
-    public void thanks(String message){
+    public void thanks(String message) {
         System.out.println(message);
     }
-    public void exception(String message){
+
+    public void exception(String message) {
         System.out.println(message);
     }
 
     public void enemyEncounter(String message) {
+        System.out.println(message);
+    }
+
+    public void de(String message){
         System.out.println(message);
     }
 }
