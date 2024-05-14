@@ -3,6 +3,8 @@ package jeu.plateau;
 import jeu.plateau.casePlateau.Case;
 import jeu.plateau.casePlateau.arme.CaseArme;
 import jeu.plateau.casePlateau.ennemi.Dragons;
+import jeu.plateau.casePlateau.ennemi.Gobelins;
+import jeu.plateau.casePlateau.ennemi.Sorciers;
 import jeu.plateau.casePlateau.potion.CasePotion;
 import jeu.plateau.casePlateau.vide.CaseVide;
 
@@ -14,11 +16,71 @@ public class Plateau {
 
     public Plateau() {
         this.cases = new ArrayList<>();
-        this.cases.add(null);
+        this.cases.add(null);//0
         this.cases.add(new CaseVide());
-        this.cases.add(new CaseArme());
-        this.cases.add(new Dragons(20));
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
         this.cases.add(new CasePotion());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new Sorciers(18));//10
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new CasePotion());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new CaseVide());
+        this.cases.add(new Sorciers(18));//20
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));
+        this.cases.add(new CasePotion());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Gobelins(12));//30
+        this.cases.add(new CasePotion());
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new CasePotion());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CasePotion());
+        this.cases.add(new Sorciers(18));//40
+        this.cases.add(new CasePotion());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CasePotion());
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new Dragons(30));
+        this.cases.add(new CaseVide());
+        this.cases.add(new Sorciers(18));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());//50
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new Dragons(30));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());//60
+        this.cases.add(new CaseVide());
+        this.cases.add(new Dragons(30));
+        this.cases.add(new CaseVide());
+        this.cases.add(new CaseVide());//64
 
     }
 
