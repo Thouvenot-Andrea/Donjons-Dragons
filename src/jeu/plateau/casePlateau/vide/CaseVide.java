@@ -1,5 +1,6 @@
 package jeu.plateau.casePlateau.vide;
 
+import jeu.personnages.Personnage;
 import jeu.plateau.casePlateau.Case;
 import jeu.plateau.dice.DiceOne;
 
@@ -16,5 +17,11 @@ public class CaseVide implements Case {
         String message = "----------------------------Vous êtes sur une Case vide.----------------------";
         int resultatDe = dice.lancer();
         return message;
+    }
+
+    @Override
+    public String interagir(Personnage hero) {
+
+        return null;
     }
 }

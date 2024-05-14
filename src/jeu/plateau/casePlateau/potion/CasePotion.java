@@ -1,5 +1,6 @@
 package jeu.plateau.casePlateau.potion;
 
+import jeu.personnages.Personnage;
 import jeu.plateau.casePlateau.Case;
 import java.util.Random;
 
@@ -25,6 +26,12 @@ public class CasePotion implements Case {
 
     @Override
     public String afficher() {
-        return "Vous avez trouvé une " + potion.afficher();
+        return "Vous avez trouvé une " + potion.toString();
+    }
+
+    @Override
+    public String interagir(Personnage hero) {
+        hero.setPv(hero.getPv() + potion.getPointsDeVie());
+        return null;
     }
 }
