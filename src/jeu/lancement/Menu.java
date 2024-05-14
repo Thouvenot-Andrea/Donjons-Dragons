@@ -169,7 +169,12 @@ public class Menu {
     public void de(String message){
         System.out.println(message);
     }
+
+    public void casePotion(String message){
+        System.out.println(message);
+    }
 }
+
 
 
 
