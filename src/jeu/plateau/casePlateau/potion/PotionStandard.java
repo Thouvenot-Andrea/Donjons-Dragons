@@ -7,12 +7,12 @@ public class PotionStandard implements Potion {
     }
 
     @Override
-    public int getPointsDeVie(String potion) {
+    public int getPointsDeVie() {
         return 2;
     }
 
     @Override
-    public String afficher() {
+    public String toString() {
         return "Potion Standard";
     }
 }

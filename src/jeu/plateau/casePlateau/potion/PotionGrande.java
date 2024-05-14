@@ -7,12 +7,12 @@ public class PotionGrande implements Potion {
     }
 
     @Override
-    public int getPointsDeVie(String potion) {
+    public int getPointsDeVie() {
         return 5;
     }
 
     @Override
-    public String afficher() {
+    public String toString() {
         return "Grande Potion";
     }
 }
