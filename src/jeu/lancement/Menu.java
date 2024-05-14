@@ -6,16 +6,21 @@ import jeu.PersonnageHorsPlateauException;
 import jeu.personnages.Mage;
 import jeu.personnages.Personnage;
 import jeu.personnages.Warrior;
+import jeu.plateau.casePlateau.Case;
 
 public class Menu {
+
     private Personnage personnage;
+    private Scanner scanner;
+
+    public Menu() {
+        this.scanner = new Scanner(System.in);
+    }
 
     // MENU
-    public boolean menuGame() throws PersonnageHorsPlateauException {
-        Scanner scanner = new Scanner(System.in);
+    public Personnage menuGame() throws PersonnageHorsPlateauException {
         boolean personnageCree = false;
         boolean continuerJeu = true;
-        Game game = new Game();
 
         while (continuerJeu) {
             System.out.println("1. Commencer le jeu");
@@ -26,6 +31,7 @@ public class Menu {
 
             System.out.print("Choisissez une option : ");
             int choix = scanner.nextInt();
+            scanner.nextLine();
 
             if (choix >= 1 && choix <= 5) {
                 switch (choix) {
@@ -50,7 +56,7 @@ public class Menu {
                     case 1:
                         if (personnageCree) {
                             System.out.println("Le jeu commence, vous êtes commencer sur la case 1 : !");
-                            game.movePlayer();
+                            return personnage;
                         } else {
                             System.out.println("Vous devez créer un personnage pour lancer une partie !");
                         }
@@ -60,23 +66,22 @@ public class Menu {
                 System.out.println("Choix invalide. Veuillez choisir une option valide.");
             }
         }
-        return false;
+        return null;
     }
 
     // Création du personnage
     public void createPerson() {
-        Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans Donjons & Dragons !");
 
         // Demander et obtenir le nom du personnage
         System.out.println("Entrez votre nom : ");
-        String nom = input.nextLine().toUpperCase();
+        String nom = scanner.nextLine().toUpperCase();
 
         // Demander et obtenir le type du personnage
         String typeStr;
         do {
             System.out.println("Entrez votre type (WARRIOR ou MAGE) : ");
-            typeStr = input.nextLine().toUpperCase();
+            typeStr = scanner.nextLine().toUpperCase();
         } while (!typeStr.equals("WARRIOR") && !typeStr.equals("MAGE"));
 
         // Créer le personnage en fonction du type saisi
@@ -91,9 +96,6 @@ public class Menu {
 
         // Afficher un message de confirmation
         System.out.println("Vous êtes maintenant un " + personnage.getType());
-
-        // Fermer le scanner
-        input.close();
     }
 
 
@@ -113,12 +115,11 @@ public class Menu {
 
     // Modifier le personnage
     public void modifyPerson() {
-        Scanner input = new Scanner(System.in);
         System.out.println("Entrez votre nom : ");
-        String name = input.nextLine().toUpperCase();
+        String name = scanner.nextLine().toUpperCase();
         while (true) {
             System.out.println("Entre le type (WARRIOR ou MAGE): ");
-            String type = input.nextLine().toUpperCase();
+            String type = scanner.nextLine().toUpperCase();
             System.out.println("Vous êtes maintenant un " + type);
             if (type.equals("WARRIOR") || type.equals("MAGE")) {
                 if (type.equals("WARRIOR")) {
@@ -142,7 +143,6 @@ public class Menu {
     }
 
     public String getUserInput() {
-        Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
 
@@ -151,20 +151,23 @@ public class Menu {
     public void display(String message) {
         System.out.println(message);
     }
+
     //MESSAGE GAME
-// Affiche le déplacement de joueur
-    public void displacementPlayer(String message) {
-        System.out.println(message);
+    // Affiche le déplacement de joueur
+    public void displacementPlayer(int currentPosition, int finalPosition) {
+        System.out.println("Avancement du joueur : Case " + currentPosition + " / " + finalPosition);
     }
 
     // Affiche  fin de la parti (Gagner)
     public void end(String message) {
         System.out.println(message);
     }
+
     // affiche si le joueur veut rejouer
     public void restart(String message) {
         System.out.println(message);
     }
+
     // affiche pour remercier le joueur
     public void thanks(String message) {
         System.out.println(message);
@@ -178,25 +181,37 @@ public class Menu {
         System.out.println(message);
     }
 
-    public void de(String message){
-        System.out.println(message);
+    public void de(int value) {
+        System.out.println("Vous avez lancé le Dé, résultat : " + value);
     }
 
-    public void casePotion(String message){
+    public void casePotion(String message) {
         System.out.println(message);
     }
 
     public void dragonEncounter(String message) {
         System.out.println(message);
     }
+
     public void defeat(String message) {
         System.out.println(message);
     }
+
     public void victory(String message) {
         System.out.println(message);
     }
+
+
+    public void heroLandsOnCase(Case gameCase) {
+        System.out.println("Le hero est sur une case: " + gameCase.afficher());
+    }
+    public void showCombatResult(String combatResult) {
+        System.out.println(combatResult);
+    }
+    public boolean askReplay() {
+        System.out.println("Voulez-vous rejouer ? (yes or no)");
+        Scanner scanner = new Scanner(System.in);
+        String choice = scanner.nextLine();
+        return choice.equalsIgnoreCase("yes");
+    }
 }
-
-
-
-
