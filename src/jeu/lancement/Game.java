@@ -6,10 +6,8 @@ import jeu.PersonnageHorsPlateauException;
 import jeu.personnages.Personnage;
 import jeu.plateau.Plateau;
 import jeu.plateau.casePlateau.Case;
-import jeu.plateau.casePlateau.ennemi.Ennemi;
-import jeu.plateau.casePlateau.vide.CaseVide;
+import jeu.plateau.casePlateau.ennemi.CaseEnnemi;
 import jeu.plateau.dice.DiceOne;
-import jeu.plateau.casePlateau.ennemi.Dragons;
 
 
 public class Game {
@@ -40,8 +38,8 @@ public class Game {
                 menu.displacementPlayer(currentPosition, finalPosition);
                 menu.heroLandsOnCase(gameCase);
 
-                if (gameCase instanceof Ennemi) {
-                    Ennemi ennemi = (Ennemi) gameCase;
+                if (gameCase instanceof CaseEnnemi) {
+                    CaseEnnemi ennemi = (CaseEnnemi) gameCase;
                     String combatResult = ennemi.interagir(personnage);
                     menu.showCombatResult(combatResult); // Afficher les informations du combat
                     if (personnage.getPv() <= 0) {
