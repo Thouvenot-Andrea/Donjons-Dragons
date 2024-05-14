@@ -1,5 +1,7 @@
 package jeu.plateau.casePlateau.ennemi;
 
+import jeu.personnages.Personnage;
+
 public class Dragons implements Ennemi {
     private int health;
 
@@ -22,6 +24,42 @@ public class Dragons implements Ennemi {
 
     @Override
     public String afficher() {
-        return "D"; // "D" représente un dragon sur le plateau
+        return "Dragon"; //
     }
+
+    //    @Override
+//    public void interagir(Personnage personnage) {
+//        while (personnage.getPv() > 0 && this.getHealth() > 0) {
+//            // Combat entre le joueur et le dragon
+//            int playerDamageDealt = personnage.getDamage();
+//            takeDamage(playerDamageDealt);
+//            if (getHealth() > 0) {
+//                int dragonDamageDealt = 4; // Le dragon inflige 4 dégâts au joueur
+//                personnage.takeDamage(dragonDamageDealt);
+//            }
+//        }
+//    }
+    @Override
+    public String interagir(Personnage personnage) {
+        StringBuilder combatResult = new StringBuilder();
+
+        combatResult.append("Début du combat avec le dragon!\n");
+
+        while (personnage.getPv() > 0 && this.getHealth() > 0) {
+            // Combat entre le joueur et le dragon
+            int playerDamageDealt = personnage.getDamage();
+            takeDamage(playerDamageDealt);
+            combatResult.append("---Vous infligez ").append(playerDamageDealt).append(" dégâts au dragon.---\n");
+
+            if (getHealth() > 0) {
+                int dragonDamageDealt = 4; // Le dragon inflige 4 dégâts au joueur
+                personnage.takeDamage(dragonDamageDealt);
+                combatResult.append("---Le dragon vous inflige ").append(dragonDamageDealt).append(" dégâts.---\n");
+            }
+        }
+
+        return combatResult.toString();
+    }
+
+
 }
