@@ -7,8 +7,7 @@ public class Arme extends EquipementOffensif {
     }
 
     public Arme(String type, int niveauAttaque) {
-        this.setType("épée en bois");
-        this.setAttaqueLevel(5);
+        super(type,niveauAttaque);
 
     }
     @Override
