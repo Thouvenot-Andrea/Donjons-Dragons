@@ -1,7 +1,7 @@
-package jeu.plateau.casePlateau;
+package jeu.plateau.casePlateau.vide;
 
+import jeu.plateau.casePlateau.Case;
 import jeu.plateau.dice.DiceOne;
-import jeu.plateau.dice.DiceSix;
 
 public class CaseVide implements Case {
 //    private DiceSix dice;

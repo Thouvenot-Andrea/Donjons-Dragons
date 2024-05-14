@@ -1,6 +1,6 @@
 package jeu.personnages;
 
-public abstract class Personnage {
+public class Personnage {
     //attributes
     private String name;
     private int pv;
@@ -87,6 +87,12 @@ public abstract class Personnage {
         this.equipementDefensif = equipementDefensif;
     }
 
+    public void takeDamage(int damage) {
+        pv -= damage;
+        if (pv < 0) {
+            pv = 0;
+        }
+    }
 
     // toString
     public String toString() {

@@ -67,23 +67,35 @@ public class Menu {
     public void createPerson() {
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans Donjons & Dragons !");
+
+        // Demander et obtenir le nom du personnage
         System.out.println("Entrez votre nom : ");
         String nom = input.nextLine().toUpperCase();
-        String typeStr = "";
-        while (!typeStr.equals("WARRIOR") && !typeStr.equals("MAGE")) {
+
+        // Demander et obtenir le type du personnage
+        String typeStr;
+        do {
             System.out.println("Entrez votre type (WARRIOR ou MAGE) : ");
             typeStr = input.nextLine().toUpperCase();
-            switch (typeStr) {
-                case "WARRIOR":
-                    personnage = new Warrior(nom);
-                    break;
-                case "MAGE":
-                    personnage = new Mage(nom);
-                    break;
-            }
+        } while (!typeStr.equals("WARRIOR") && !typeStr.equals("MAGE"));
+
+        // Créer le personnage en fonction du type saisi
+        switch (typeStr) {
+            case "WARRIOR":
+                personnage = new Warrior(nom);
+                break;
+            case "MAGE":
+                personnage = new Mage(nom);
+                break;
         }
+
+        // Afficher un message de confirmation
         System.out.println("Vous êtes maintenant un " + personnage.getType());
+
+        // Fermer le scanner
+        input.close();
     }
+
 
     // Afficher les infos du personnage
     public void infos() {
@@ -171,6 +183,16 @@ public class Menu {
     }
 
     public void casePotion(String message){
+        System.out.println(message);
+    }
+
+    public void dragonEncounter(String message) {
+        System.out.println(message);
+    }
+    public void defeat(String message) {
+        System.out.println(message);
+    }
+    public void victory(String message) {
         System.out.println(message);
     }
 }
