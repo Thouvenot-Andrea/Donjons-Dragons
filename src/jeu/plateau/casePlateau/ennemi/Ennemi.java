@@ -39,6 +39,9 @@ public abstract class Ennemi implements CaseEnnemi {
             }
         }
 
+        combatResult.append("---Il vous reste ").append(personnage.getPv()).append(" Pv");
+
         return combatResult.toString();
     }
+
 }
