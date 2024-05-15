@@ -1,27 +1,38 @@
 package jeu.personnages;
 
-
 import jeu.personnages.equipement.defensif.Bouclier;
-import jeu.personnages.equipement.defensif.Philtre;
 import jeu.personnages.equipement.offensif.Arme;
+import java.util.Random;
 
 public class Warrior extends Personnage {
 
-    private final Bouclier equipementDefensif = new Bouclier();
-    private final Arme equipementOffensif = new Arme();
+    private final Bouclier equipementDefensif;
+    private final Arme equipementOffensif;
+    private final Random random;
 
     public Warrior(String name) {
         super(name, 10, 1);
         this.setType("WARRIOR");
 
-        Bouclier bouclier = new Bouclier();
-        this.setEquipementDefensif(String.valueOf(bouclier));
-        this.setPv(this.getPv() + bouclier.getDefenceLevel());
+        equipementDefensif = new Bouclier();
+        this.setEquipementDefensif(String.valueOf(equipementDefensif));
+        this.setPv(this.getPv() + equipementDefensif.getDefenceLevel());
 
-        Arme arme = new Arme();
-        this.setEquipementOffensif(String.valueOf(arme));
-        this.setDamage(this.getDamage()+ arme.getAttaqueLevel());
+        equipementOffensif = new Arme();
+        this.setEquipementOffensif(String.valueOf(equipementOffensif));
+
+        random =   new Random();
     }
+    public int getDamage(){
+        int totalDamage = getDamageBase();
+        int spellDamage = random.nextInt(4)+1;
+        totalDamage += spellDamage;
+        return totalDamage;
+    }
+    private int getDamageBase(){
+        return 1;
+    }
+
 
     @Override
     public String toString() {
