@@ -3,27 +3,43 @@ package jeu.personnages;
 import jeu.personnages.equipement.defensif.Philtre;
 import jeu.personnages.equipement.offensif.Sort;
 
-public class Mage extends Personnage {
+import java.util.Random;
 
-    private final Philtre equipementDefensif = new Philtre();
-    private final Sort  equipementOffensif =  new Sort();
+public class Mage extends Personnage {
+    private final Philtre equipementDefensif;
+    private final Sort equipementOffensif;
+    private final Random random;
 
     public Mage(String name) {
-        super(name, 6 , 15);
+        super(name, 10, 1);
         this.setType("MAGE");
 
-        Philtre philtre = new Philtre();
-        this.setEquipementDefensif(String.valueOf(philtre));
-        this.setPv(this.getPv() + philtre.getDefenceLevel());
+        equipementDefensif = new Philtre();
+        this.setEquipementDefensif(String.valueOf(equipementDefensif));
+        this.setPv(this.getPv() + equipementDefensif.getDefenceLevel());
 
-        Sort sort = new Sort();
-        this.setEquipementOffensif(String.valueOf(sort));
-        this.setDamage(this.getDamage() + sort.getAttaqueLevel());
+        equipementOffensif = new Sort();
+        this.setEquipementOffensif(String.valueOf(equipementOffensif));
 
+        random = new Random();
     }
 
     @Override
+    public int getDamage() {
 
+        int totalDamage = getDamageBase(); // Attaque de base du joueur
+
+        int spellDamage = random.nextInt(6) + 1; // Dégâts du sort
+        totalDamage += spellDamage;
+
+        return totalDamage;
+    }
+
+    private int getDamageBase() {
+        return 1;
+    }
+
+    @Override
     public String toString() {
         String parentString = super.toString();
 
@@ -35,6 +51,5 @@ public class Mage extends Personnage {
 
         return parentString;
     }
-
 }
 
