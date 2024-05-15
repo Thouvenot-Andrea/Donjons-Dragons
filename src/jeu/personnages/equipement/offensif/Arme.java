@@ -3,7 +3,7 @@ package jeu.personnages.equipement.offensif;
 public class Arme extends EquipementOffensif {
 
     public Arme(){
-        super("Epée en bois", 2);
+        super("Epée en bois", 0);
     }
 
     public Arme(String type, int niveauAttaque) {
