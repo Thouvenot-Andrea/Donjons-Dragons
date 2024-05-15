@@ -11,7 +11,7 @@ public class Warrior extends Personnage {
     private final Arme equipementOffensif = new Arme();
 
     public Warrior(String name) {
-        super(name, 10, 10);
+        super(name, 10, 1);
         this.setType("WARRIOR");
 
         Bouclier bouclier = new Bouclier();
