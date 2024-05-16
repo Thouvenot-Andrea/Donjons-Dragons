@@ -1,5 +1,6 @@
 package jeu.plateau.casePlateau.vide;
 
+import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.plateau.casePlateau.Case;
 import jeu.plateau.dice.DiceOne;
@@ -23,5 +24,10 @@ public class CaseVide implements Case {
     public String interagir(Personnage hero) {
 
         return null;
+    }
+
+    @Override
+    public void interagirAvecJoueur(Personnage personnage, Menu menu) {
+
     }
 }

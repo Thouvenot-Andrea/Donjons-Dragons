@@ -1,7 +1,8 @@
 package jeu.plateau;
 
 import jeu.plateau.casePlateau.Case;
-import jeu.plateau.casePlateau.arme.CaseArme;
+import jeu.plateau.casePlateau.arme.Epee;
+import jeu.plateau.casePlateau.arme.Massue;
 import jeu.plateau.casePlateau.ennemi.Dragons;
 import jeu.plateau.casePlateau.ennemi.Gobelins;
 import jeu.plateau.casePlateau.ennemi.Sorciers;
@@ -18,16 +19,16 @@ public class Plateau {
         this.cases = new ArrayList<>();
         this.cases.add(null);//0
         this.cases.add(new CaseVide());
-        this.cases.add(new CaseVide());
+        this.cases.add(new Massue(3));
         this.cases.add(new Gobelins(12));
         this.cases.add(new CaseVide());
-        this.cases.add(new CaseVide());
+        this.cases.add(new Massue(3));
         this.cases.add(new Gobelins(12));
         this.cases.add(new CasePotion());
         this.cases.add(new CaseVide());
         this.cases.add(new Gobelins(12));
         this.cases.add(new Sorciers(18));//10
-        this.cases.add(new CaseVide());
+        this.cases.add(new Massue(3));
         this.cases.add(new Gobelins(12));
         this.cases.add(new CasePotion());
         this.cases.add(new CaseVide());
@@ -35,14 +36,14 @@ public class Plateau {
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());
         this.cases.add(new Gobelins(12));
-        this.cases.add(new CaseVide());
+        this.cases.add(new Epee(5));
         this.cases.add(new Sorciers(18));//20
         this.cases.add(new Gobelins(12));
-        this.cases.add(new CaseVide());
+        this.cases.add(new Massue(3));
         this.cases.add(new CaseVide());
         this.cases.add(new Gobelins(12));
         this.cases.add(new Sorciers(18));
-        this.cases.add(new CaseVide());
+        this.cases.add(new Epee(5));
         this.cases.add(new Gobelins(12));
         this.cases.add(new CasePotion());
         this.cases.add(new CaseVide());
@@ -54,11 +55,11 @@ public class Plateau {
         this.cases.add(new Sorciers(18));
         this.cases.add(new Sorciers(18));
         this.cases.add(new Sorciers(18));
-        this.cases.add(new CaseVide());
+        this.cases.add(new Massue(3));
         this.cases.add(new CasePotion());
         this.cases.add(new Sorciers(18));//40
         this.cases.add(new CasePotion());
-        this.cases.add(new CaseVide());
+        this.cases.add(new Epee(5));
         this.cases.add(new CasePotion());
         this.cases.add(new Sorciers(18));
         this.cases.add(new Dragons(30));
@@ -69,7 +70,7 @@ public class Plateau {
         this.cases.add(new CaseVide());//50
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());
-        this.cases.add(new CaseVide());
+        this.cases.add(new Epee(5));
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());
         this.cases.add(new Dragons(30));

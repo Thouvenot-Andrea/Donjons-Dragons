@@ -1,5 +1,6 @@
 package jeu.plateau.casePlateau.potion;
 
+import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.plateau.casePlateau.Case;
 import java.util.Random;
@@ -33,5 +34,10 @@ public class CasePotion implements Case {
     public String interagir(Personnage hero) {
         hero.setPv(hero.getPv() + potion.getPointsDeVie());
         return null;
+    }
+
+    @Override
+    public void interagirAvecJoueur(Personnage personnage, Menu menu) {
+
     }
 }

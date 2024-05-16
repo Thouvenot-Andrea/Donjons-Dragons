@@ -1,5 +1,6 @@
 package jeu.plateau.casePlateau.ennemi;
 
+import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.plateau.casePlateau.ennemi.CaseEnnemi;
 
@@ -22,6 +23,13 @@ public abstract class Ennemi implements CaseEnnemi {
     }
 
     public abstract String afficher();
+
+
+
+    public void interagirAvecJoueur(Personnage personnage, Menu menu) {
+        String combatResult = interagir(personnage);
+        menu.showCombatResult(combatResult);
+    }
 
     public String interagir(Personnage personnage) {
         StringBuilder combatResult = new StringBuilder();

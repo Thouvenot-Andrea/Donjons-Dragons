@@ -38,21 +38,12 @@ public class Game {
                 menu.displacementPlayer(currentPosition, finalPosition);
                 menu.heroLandsOnCase(gameCase);
 
-                if (gameCase instanceof CaseEnnemi) {
-                    CaseEnnemi ennemi = (CaseEnnemi) gameCase;
-                    String combatResult = ennemi.interagir(personnage);
-                    menu.showCombatResult(combatResult); // Afficher les informations du combat
-                    if (personnage.getPv() <= 0) {
-                        menu.defeat("Vous avez été vaincu. Game Over !");
-                        return; // Laisser la logique de redémarrage au main
-                    }
-                } else {
-                    gameCase.interagir(personnage);
-                }
 
                 if (personnage.getPv() <= 0) {
-                    menu.defeat("Vous avez été vaincu. Game Over !");
-                    return;
+                        menu.defeat("Vous avez été vaincu. Game Over !");
+                        return; // Laisser la logique de redémarrage au main
+                } else {
+                    gameCase.interagirAvecJoueur(personnage, menu);
                 }
 
             }

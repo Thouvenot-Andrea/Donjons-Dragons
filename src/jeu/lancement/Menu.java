@@ -208,10 +208,8 @@ public class Menu {
     public void showCombatResult(String combatResult) {
         System.out.println(combatResult);
     }
-    public boolean askReplay() {
-        System.out.println("Voulez-vous rejouer ? (yes or no)");
-        Scanner scanner = new Scanner(System.in);
-        String choice = scanner.nextLine();
-        return choice.equalsIgnoreCase("yes");
-    }
+
+
+
+
 }
