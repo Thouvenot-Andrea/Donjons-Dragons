@@ -8,7 +8,6 @@ public class Warrior extends Personnage {
 
     private final Bouclier equipementDefensif;
     private final Arme equipementOffensif;
-    private final Random random;
 
     public Warrior(String name) {
         super(name, 10, 1);
@@ -21,17 +20,8 @@ public class Warrior extends Personnage {
         equipementOffensif = new Arme();
         this.setEquipementOffensif(String.valueOf(equipementOffensif));
 
-        random =   new Random();
     }
-    public int getDamage(){
-        int totalDamage = getDamageBase();
-        int spellDamage = random.nextInt(4)+1;
-        totalDamage += spellDamage;
-        return totalDamage;
-    }
-    private int getDamageBase(){
-        return 1;
-    }
+
 
 
     @Override

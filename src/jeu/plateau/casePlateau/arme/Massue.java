@@ -36,7 +36,7 @@ public class Massue extends Arme {
         armeResult.append("Dégât de l'arme: ").append(getArmeDamage()).append(" PV.").append("\n");
 
         if (personnage instanceof Warrior) {
-
+            armeResult.append(personnage.getDamage()).append(" Pv \n");
             armeResult.append("La massue interagit avec le personnage.\n");
             int degatsPersonnage = personnage.getDamage() + ArmeDamage();
             personnage.setDamage(degatsPersonnage);
