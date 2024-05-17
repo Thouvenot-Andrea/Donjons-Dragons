@@ -1,7 +1,5 @@
 package jeu.personnages.equipement.offensif;
 
-import java.util.Random;
-
 public class Sort extends EquipementOffensif {
     public Sort(){
         super("Boule de feu", 0);

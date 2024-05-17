@@ -145,63 +145,32 @@ public class Menu {
     public String getUserInput() {
         return scanner.next();
     }
-
     //MESSAGE MAIN
-// Message de bienvue utilise dans le main.java
     public void display(String message) {
         System.out.println(message);
     }
-
     //MESSAGE GAME
-    // Affiche le déplacement de joueur
     public void displacementPlayer(int currentPosition, int finalPosition) {
         System.out.println("Avancement du joueur : Case " + currentPosition + " / " + finalPosition);
     }
-
-    // Affiche  fin de la parti (Gagner)
     public void end(String message) {
         System.out.println(message);
     }
-
-    // affiche si le joueur veut rejouer
     public void restart(String message) {
         System.out.println(message);
     }
-
-    // affiche pour remercier le joueur
     public void thanks(String message) {
         System.out.println(message);
     }
-
     public void exception(String message) {
         System.out.println(message);
     }
-
-    public void enemyEncounter(String message) {
-        System.out.println(message);
-    }
-
     public void de(int value) {
         System.out.println("Vous avez lancé le Dé, résultat : " + value);
     }
-
-    public void casePotion(String message) {
-        System.out.println(message);
-    }
-
-    public void dragonEncounter(String message) {
-        System.out.println(message);
-    }
-
     public void defeat(String message) {
         System.out.println(message);
     }
-
-    public void victory(String message) {
-        System.out.println(message);
-    }
-
-
     public void heroLandsOnCase(Case gameCase) {
         System.out.println("Le hero est sur une case: " + gameCase.afficher());
     }

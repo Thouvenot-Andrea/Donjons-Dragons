@@ -27,14 +27,15 @@ public class Game {
         boolean playerWon = false;
         try {
             while (currentPosition < finalPosition) {
-                currentPosition = movePersonnage(currentPosition);
-                Case gameCase = plateau.getCase(currentPosition);
-                menu.displacementPlayer(currentPosition, finalPosition);
-                menu.heroLandsOnCase(gameCase);
+
                 if (personnage.getPv() <= 0) {
                     menu.defeat("Vous avez été vaincu. Game Over !");
                     return;
                 } else {
+                    currentPosition = movePersonnage(currentPosition);
+                    Case gameCase = plateau.getCase(currentPosition);
+                    menu.displacementPlayer(currentPosition, finalPosition);
+                    menu.heroLandsOnCase(gameCase);
                     gameCase.interagirAvecJoueur(personnage, menu);
                 }
             }

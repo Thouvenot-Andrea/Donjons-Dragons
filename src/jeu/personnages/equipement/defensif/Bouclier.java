@@ -2,7 +2,7 @@ package jeu.personnages.equipement.defensif;
 
 public class Bouclier extends EquipementDefensif {
     public Bouclier() {
-        super("Bouclier en bois ", 1);
+        super("Bouclier en bois ", 0);
     }
 
     public Bouclier(String type, int defenceLevel) {
