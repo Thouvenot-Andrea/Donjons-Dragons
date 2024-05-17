@@ -1,20 +1,14 @@
 package jeu.plateau.casePlateau.arme;
 
+import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.plateau.casePlateau.Case;
 
-public class CaseArme implements Case {
-    @Override
-    public String afficher() {
-        return "Vous avez trouvé une arme";
-    }
+public interface CaseArme extends Case {
 
-    @Override
-    public String interagir(Personnage hero) {
-//        if (hero instanceof Warrior) {
-//            hero.setEquipementDefensif(arme);
-//        }
-        return null;
-    }
-    // random d'arme
+    int ArmeDamage();
+
+    void interagirAvecJoueur(Personnage personnage, Menu menu);
+
+
 }

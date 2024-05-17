@@ -8,7 +8,6 @@ import java.util.Random;
 public class Mage extends Personnage {
     private final Philtre equipementDefensif;
     private final Sort equipementOffensif;
-    private final Random random;
 
     public Mage(String name) {
         super(name, 10, 1);
@@ -21,23 +20,10 @@ public class Mage extends Personnage {
         equipementOffensif = new Sort();
         this.setEquipementOffensif(String.valueOf(equipementOffensif));
 
-        random = new Random();
+
     }
 
-    @Override
-    public int getDamage() {
 
-        int totalDamage = getDamageBase(); // Attaque de base du joueur
-
-        int spellDamage = random.nextInt(6) + 1; // Dégâts du sort
-        totalDamage += spellDamage;
-
-        return totalDamage;
-    }
-
-    private int getDamageBase() {
-        return 1;
-    }
 
     @Override
     public String toString() {
