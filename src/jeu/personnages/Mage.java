@@ -3,8 +3,6 @@ package jeu.personnages;
 import jeu.personnages.equipement.defensif.Philtre;
 import jeu.personnages.equipement.offensif.Sort;
 
-import java.util.Random;
-
 public class Mage extends Personnage {
     private final Philtre equipementDefensif;
     private final Sort equipementOffensif;

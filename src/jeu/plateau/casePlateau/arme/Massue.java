@@ -3,8 +3,6 @@ package jeu.plateau.casePlateau.arme;
 import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.personnages.Warrior;
-import jeu.personnages.equipement.offensif.EquipementOffensif;
-import jeu.plateau.casePlateau.Case;
 
 public class Massue extends Arme {
 

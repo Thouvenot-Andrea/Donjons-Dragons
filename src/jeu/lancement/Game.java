@@ -1,7 +1,5 @@
 package jeu.lancement;
 
-import java.util.Random;
-
 import jeu.PersonnageHorsPlateauException;
 import jeu.personnages.Personnage;
 import jeu.plateau.Plateau;
