@@ -6,10 +6,8 @@ import jeu.personnages.Warrior;
 
 public class Massue extends Arme {
 
-
-
-    public Massue(int niveauAttaque) {
-        super(niveauAttaque);
+    public Massue(int attaquePv) {
+        super(attaquePv);
     }
 
     @Override
