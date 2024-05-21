@@ -1,6 +1,16 @@
 package jeu.plateau.casePlateau.potion;
 
-public class PotionStandard implements Potion {
+public class PotionStandard extends Potion {
+
+    public PotionStandard(int potionPv) {
+        super(potionPv);
+    }
+
+    @Override
+    public String afficher() {
+        return "Potion Standard";
+    }
+
     @Override
     public String getPotionAleatoire() {
         return "Potion Standard";
@@ -11,8 +21,6 @@ public class PotionStandard implements Potion {
         return 2;
     }
 
-    @Override
-    public String toString() {
-        return "Potion Standard";
-    }
+
 }
+

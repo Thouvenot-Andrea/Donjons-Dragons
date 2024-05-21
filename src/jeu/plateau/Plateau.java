@@ -8,7 +8,9 @@ import jeu.plateau.casePlateau.arme.Massue;
 import jeu.plateau.casePlateau.ennemi.Dragons;
 import jeu.plateau.casePlateau.ennemi.Gobelins;
 import jeu.plateau.casePlateau.ennemi.Sorciers;
-import jeu.plateau.casePlateau.potion.CasePotion;
+import jeu.plateau.casePlateau.potion.Potion;
+import jeu.plateau.casePlateau.potion.PotionGrande;
+import jeu.plateau.casePlateau.potion.PotionStandard;
 import jeu.plateau.casePlateau.vide.CaseVide;
 
 import java.util.ArrayList;
@@ -22,51 +24,51 @@ public class Plateau {
         this.cases.add(null);//0
         this.cases.add(new Eclair(2));
         this.cases.add(new Massue(3));
-        this.cases.add(new Gobelins(12));
+        this.cases.add(new Gobelins(1));
         this.cases.add(new Eclair(2));
         this.cases.add(new Massue(3));
-        this.cases.add(new Gobelins(12));
-        this.cases.add(new CasePotion());
+        this.cases.add(new Gobelins(1));
+        this.cases.add(new PotionStandard(2));
         this.cases.add(new Eclair(2));
-        this.cases.add(new Gobelins(12));
-        this.cases.add(new Sorciers(18));//10
+        this.cases.add(new Gobelins(1));
+        this.cases.add(new Sorciers(9));//10
         this.cases.add(new Massue(3));
-        this.cases.add(new Gobelins(12));
-        this.cases.add(new CasePotion());
+        this.cases.add(new Gobelins(1));
+        this.cases.add(new PotionStandard(2));
         this.cases.add(new CaseVide());
-        this.cases.add(new Gobelins(12));
+        this.cases.add(new Gobelins(1));
         this.cases.add(new CaseVide());
         this.cases.add(new Eclair(2));
-        this.cases.add(new Gobelins(12));
+        this.cases.add(new Gobelins(1));
         this.cases.add(new Epee(5));
-        this.cases.add(new Sorciers(18));//20
-        this.cases.add(new Gobelins(12));
+        this.cases.add(new Sorciers(9));//20
+        this.cases.add(new Gobelins(1));
         this.cases.add(new Massue(3));
         this.cases.add(new Eclair(2));
-        this.cases.add(new Gobelins(12));
-        this.cases.add(new Sorciers(18));
+        this.cases.add(new Gobelins(1));
+        this.cases.add(new Sorciers(9));
         this.cases.add(new Epee(5));
-        this.cases.add(new Gobelins(12));
-        this.cases.add(new CasePotion());
+        this.cases.add(new Gobelins(1));
+        this.cases.add(new PotionGrande(5));
         this.cases.add(new CaseVide());
-        this.cases.add(new Gobelins(12));//30
-        this.cases.add(new CasePotion());
-        this.cases.add(new Sorciers(18));
-        this.cases.add(new CasePotion());
+        this.cases.add(new Gobelins(1));//30
+        this.cases.add(new PotionStandard(2));
+        this.cases.add(new Sorciers(9));
+        this.cases.add(new PotionStandard(2));
         this.cases.add(new CaseVide());
-        this.cases.add(new Sorciers(18));
-        this.cases.add(new Sorciers(18));
-        this.cases.add(new Sorciers(18));
+        this.cases.add(new Sorciers(9));
+        this.cases.add(new Sorciers(9));
+        this.cases.add(new Sorciers(9));
         this.cases.add(new Massue(3));
-        this.cases.add(new CasePotion());
-        this.cases.add(new Sorciers(18));//40
-        this.cases.add(new CasePotion());
+        this.cases.add(new PotionGrande(5));
+        this.cases.add(new Sorciers(9));//40
+        this.cases.add(new PotionStandard(2));
         this.cases.add(new Epee(5));
-        this.cases.add(new CasePotion());
-        this.cases.add(new Sorciers(18));
-        this.cases.add(new Dragons(30));
+        this.cases.add(new PotionStandard(2));
+        this.cases.add(new Sorciers(9));
+        this.cases.add(new Dragons(15));
         this.cases.add(new CaseVide());
-        this.cases.add(new Sorciers(18));
+        this.cases.add(new Sorciers(9));
         this.cases.add(new Feu(7));
         this.cases.add(new Feu(7));
         this.cases.add(new CaseVide());//50
@@ -75,13 +77,13 @@ public class Plateau {
         this.cases.add(new Epee(5));
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());
-        this.cases.add(new Dragons(30));
+        this.cases.add(new Dragons(15));
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());//60
         this.cases.add(new CaseVide());
-        this.cases.add(new Dragons(30));
+        this.cases.add(new Dragons(15));
         this.cases.add(new CaseVide());
         this.cases.add(new CaseVide());//64
 

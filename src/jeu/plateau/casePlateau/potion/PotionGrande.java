@@ -1,9 +1,19 @@
 package jeu.plateau.casePlateau.potion;
 
-public class PotionGrande implements Potion {
+public class PotionGrande extends Potion {
+
+    public PotionGrande(int potionPv) {
+        super(potionPv);
+    }
+
+    @Override
+    public String afficher() {
+        return "Potion Grande";
+    }
+
     @Override
     public String getPotionAleatoire() {
-        return "Grand Potion";
+        return "Potion Grande";
     }
 
     @Override
@@ -11,8 +21,4 @@ public class PotionGrande implements Potion {
         return 5;
     }
 
-    @Override
-    public String toString() {
-        return "Grande Potion";
-    }
 }
