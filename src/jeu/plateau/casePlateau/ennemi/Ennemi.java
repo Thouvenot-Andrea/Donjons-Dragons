@@ -2,7 +2,7 @@ package jeu.plateau.casePlateau.ennemi;
 
 import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
-import jeu.plateau.casePlateau.ennemi.CaseEnnemi;
+
 
 public abstract class Ennemi implements CaseEnnemi {
     protected int health;
