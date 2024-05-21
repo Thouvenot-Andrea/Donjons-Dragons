@@ -5,12 +5,14 @@ import jeu.personnages.Personnage;
 import jeu.plateau.Plateau;
 import jeu.plateau.casePlateau.Case;
 import jeu.plateau.dice.DiceOne;
+import jeu.plateau.dice.DiceSix;
 
 public class Game {
     private final Personnage personnage;
     private final Menu menu;
     private final Plateau plateau;
     private final DiceOne dice;
+//    private final DiceSix dice;
 
     public Game(Plateau plateau, Personnage personnage, Menu menu) {
         this.plateau = plateau;

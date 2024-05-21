@@ -13,12 +13,9 @@ public class Feu extends Arme {
         return "Boule de Feu";
     }
 
-    public void interagirAvecJoueur(Personnage personnage,Menu menu){
-        String armeResult = interagir(personnage);
-        menu.showCombatResult(armeResult);
-    }
+
     @Override
-    public String interagir(Personnage personnage) {
+    public void interagirAvecJoueur(Personnage personnage,Menu menu) {
         StringBuilder armeResult = new StringBuilder();
         if (personnage instanceof Mage mage) {
             int currentWeaponDamage = mage.attaqueArme();
@@ -37,7 +34,7 @@ public class Feu extends Arme {
         } else {
             armeResult.append("Seuls les Mages peuvent équiper cette Arme!!!!");
         }
-        return armeResult.toString();
+        menu.showCombatResult(armeResult.toString());
     }
 
 }

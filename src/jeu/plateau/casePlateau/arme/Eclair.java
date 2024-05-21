@@ -4,6 +4,8 @@ import jeu.lancement.Menu;
 import jeu.personnages.Mage;
 import jeu.personnages.Personnage;
 
+import static java.awt.SystemColor.menu;
+
 
 public class Eclair extends Arme {
 
@@ -14,12 +16,9 @@ public class Eclair extends Arme {
         return "ECLAIR";
     }
 
-    public void interagirAvecJoueur(Personnage personnage,Menu menu){
-        String armeResult = interagir(personnage);
-        menu.showCombatResult(armeResult);
-    }
+
     @Override
-    public String interagir(Personnage personnage) {
+    public void interagirAvecJoueur(Personnage personnage,Menu menu) {
         StringBuilder armeResult = new StringBuilder();
         if (personnage instanceof Mage mage) {
             int currentWeaponDamage = mage.attaqueArme();
@@ -38,7 +37,8 @@ public class Eclair extends Arme {
         } else {
             armeResult.append("Seuls les Mages peuvent équiper cette Arme!!!!");
         }
-        return armeResult.toString();
+        menu.showCombatResult(armeResult.toString());
+
     }
 
 }

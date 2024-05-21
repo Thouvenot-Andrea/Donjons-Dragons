@@ -9,11 +9,11 @@ public class Warrior extends Personnage {
     private final Arme equipementOffensif;
 
     public int getDamageBase() {
-        return 1;
+        return 5;
     }
 
     public Warrior(String name) {
-        super(name, 10, 1);
+        super(name, 10, 5);
         this.setType("WARRIOR");
 
         equipementDefensif = new Bouclier();

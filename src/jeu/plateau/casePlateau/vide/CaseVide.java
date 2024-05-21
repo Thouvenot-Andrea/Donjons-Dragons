@@ -21,12 +21,6 @@ public class CaseVide implements Case {
     }
 
     @Override
-    public String interagir(Personnage hero) {
-
-        return null;
-    }
-
-    @Override
     public void interagirAvecJoueur(Personnage personnage, Menu menu) {
 
     }

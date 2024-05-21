@@ -151,7 +151,7 @@ public class Menu {
     }
     //MESSAGE GAME
     public void displacementPlayer(int currentPosition, int finalPosition) {
-        System.out.println("Avancement du joueur : Case " + currentPosition + " / " + finalPosition);
+        System.out.println("Avancement du joueur : Case " + currentPosition + " / " + finalPosition+"\n");
     }
     public void end(String message) {
         System.out.println(message);
@@ -166,7 +166,7 @@ public class Menu {
         System.out.println(message);
     }
     public void de(int value) {
-        System.out.println("Vous avez lancé le Dé, résultat : " + value);
+        System.out.println("\nVous avez lancé le Dé, résultat : " + value);
     }
     public void defeat(String message) {
         System.out.println(message);
