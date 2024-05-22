@@ -1,22 +1,16 @@
 package jeu.plateau.casePlateau.ennemi;
 
 public class Dragons extends Ennemi {
+
+    private static int getPv = 6;
+
     public Dragons() {
-        super(getDefaultPv());
+        super(getPv);
     }
 
     @Override
     public String afficher() {
         return "Dragon";
-    }
-
-    public static int getDefaultPv() {
-        return 6;
-    }
-
-    @Override
-    public int getPv() {
-        return super.getPv();
     }
 
     @Override

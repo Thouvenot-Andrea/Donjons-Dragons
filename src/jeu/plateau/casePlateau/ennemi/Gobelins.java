@@ -2,8 +2,10 @@ package jeu.plateau.casePlateau.ennemi;
 
 public class Gobelins extends Ennemi {
 
+    private static int getPv = 15;
+
     public Gobelins() {
-        super(getDefaultPv());
+        super(getPv);
     }
 
     @Override
@@ -11,18 +13,8 @@ public class Gobelins extends Ennemi {
         return "Gobelin";
     }
 
-    public static int getDefaultPv() {
-        return 15;
-    }
-
-    @Override
-    public int getPv() {
-        return super.getPv();
-    }
-
     @Override
     public int ennemiDamageDealt() {
-        return 4;
+        return 2;
     }
-
 }

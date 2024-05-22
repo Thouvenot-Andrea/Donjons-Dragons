@@ -2,8 +2,10 @@ package jeu.plateau.casePlateau.ennemi;
 
 public class Sorciers extends Ennemi {
 
+    private static int getPv = 9;
+
     public Sorciers() {
-        super(getDefaultPv());
+        super(getPv);
     }
 
     @Override
@@ -11,19 +13,9 @@ public class Sorciers extends Ennemi {
         return "Sorcier";
     }
 
-    public static int getDefaultPv() {
-        return 9;
-    }
-
-    @Override
-    public int getPv() {
-        return super.getPv();
-    }
-
     @Override
     public int ennemiDamageDealt() {
         return 2;
     }
-
 }
 
