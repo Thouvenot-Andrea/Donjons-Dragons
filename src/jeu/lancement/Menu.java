@@ -182,7 +182,14 @@ public class Menu {
                     } else {
                         personnage = new Mage(newName);
                     }
-                    dataBase.updateHeroInDatabase(oldName, newName, type);
+
+                    // Maintenant que personnage est initialisé, vous pouvez accéder à getPv()
+                    int niveauVie = personnage.getPv();
+                    int niveauForce = personnage.getDamage();
+                    String offensif = personnage.getEquipementOffensif();
+                    String defensif = personnage.getEquipementDefensif();
+
+                    dataBase.updateHeroInDatabase(oldName, newName, type, niveauVie,niveauForce,offensif,defensif);
                     break;
                 } else {
                     System.out.println("Erreur : Type de personnage invalide.");
@@ -192,17 +199,6 @@ public class Menu {
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     public String getUserInput() {

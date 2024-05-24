@@ -123,13 +123,20 @@ public class DataBase {
         }
     }
 
-    void updateHeroInDatabase(String oldName, String newName, String type) throws SQLException {
-        String updateQuery = "UPDATE Hero SET Nom = ?, Type = ? WHERE UPPER(Nom) = ?";
+    void updateHeroInDatabase(String oldName, String newName, String type,int niveauVie,int niveauForce,String offensif,String defensif) throws SQLException {
+        String updateQuery = "UPDATE Hero SET Nom = ?, Type = ? ,NiveauVie = ? ,NiveauForce = ? , Offensif = ? ,Defensif = ? WHERE UPPER(Nom) = ?";
         try (Connection conn = this.getConnection();
              PreparedStatement stmt = conn.prepareStatement(updateQuery)) {
+
             stmt.setString(1, newName);
             stmt.setString(2, type);
-            stmt.setString(3, oldName);
+            stmt.setInt(3,niveauVie);
+            stmt.setInt(4, niveauForce);
+            stmt.setString(5,offensif);
+            stmt.setString(6,defensif);
+            stmt.setString(7, oldName);
+
+
             stmt.executeUpdate();
         }
     }
