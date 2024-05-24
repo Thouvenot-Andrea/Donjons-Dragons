@@ -6,7 +6,7 @@ import jeu.personnages.Personnage;
 public interface Case {
     String afficher();
 
-    String interagir(Personnage hero);
+//    String interagir(Personnage personnage);
 
     void interagirAvecJoueur(Personnage personnage, Menu menu);
 }

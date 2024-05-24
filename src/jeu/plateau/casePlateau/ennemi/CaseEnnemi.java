@@ -10,5 +10,5 @@ public interface CaseEnnemi extends Case {
 
     void takeDamage(int damage);
 
-    int getHealth();
+
 }

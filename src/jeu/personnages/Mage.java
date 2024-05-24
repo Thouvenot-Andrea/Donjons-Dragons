@@ -8,11 +8,11 @@ public class Mage extends Personnage {
     private final Sort equipementOffensif;
 
     public int getDamageBase() {
-        return 1;
+        return 8;
     }
 
     public Mage(String name) {
-        super(name, 10, 1);
+        super(name, 10, 8);
         this.setType("MAGE");
 
         equipementDefensif = new Philtre();

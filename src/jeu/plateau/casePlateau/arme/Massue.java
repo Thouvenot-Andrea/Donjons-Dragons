@@ -4,6 +4,8 @@ import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.personnages.Warrior;
 
+import static java.awt.SystemColor.menu;
+
 public class Massue extends Arme {
 
     public Massue(int attaquePv) {
@@ -15,14 +17,9 @@ public class Massue extends Arme {
         return "MASSUE";
     }
 
-    @Override
-    public void interagirAvecJoueur(Personnage personnage, Menu menu) {
-        String armeResult = interagir(personnage);
-        menu.showCombatResult(armeResult);
-    }
 
     @Override
-    public String interagir(Personnage personnage) {
+    public void interagirAvecJoueur(Personnage personnage,Menu menu) {
         StringBuilder armeResult = new StringBuilder();
         if (personnage instanceof Warrior warrior) {
             int currentWeaponDamage = warrior.attaqueArme();
@@ -41,7 +38,7 @@ public class Massue extends Arme {
         } else {
             armeResult.append("Seuls les Warriors peuvent équiper cette Arme!!!!");
         }
-        return armeResult.toString();
+        menu.showCombatResult(armeResult.toString());
     }
 
 }
