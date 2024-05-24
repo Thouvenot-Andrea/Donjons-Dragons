@@ -189,7 +189,7 @@ public class Menu {
                     String offensif = personnage.getEquipementOffensif();
                     String defensif = personnage.getEquipementDefensif();
 
-                    dataBase.updateHeroInDatabase(oldName, newName, type, niveauVie,niveauForce,offensif,defensif);
+                    dataBase.updateHero(oldName, newName, type, niveauVie,niveauForce,offensif,defensif);
                     break;
                 } else {
                     System.out.println("Erreur : Type de personnage invalide.");

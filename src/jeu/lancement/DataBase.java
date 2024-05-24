@@ -64,70 +64,27 @@ public class DataBase {
         }
     }
 
-
-    public void setHero() throws SQLException {
-        String req = "SELECT * FROM Hero";
-    }
-
-
     public void createHero(Personnage personnage) throws SQLException {
         String req = "INSERT INTO Hero (Type, Nom, NiveauVie, NiveauForce, Offensif, Defensif) VALUES (?,?,?,?,?,?)";
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(req)) {
-            preparedStatement.setString(1, personnage.getType());
-            preparedStatement.setString(2, personnage.getName());
-            preparedStatement.setInt(3, personnage.getPv());
-            preparedStatement.setInt(4, personnage.getDamage());
-
-            if (personnage.getEquipementOffensif() != null) {
-                preparedStatement.setString(5, personnage.getEquipementOffensif());
-            } else {
-                preparedStatement.setNull(5, Types.VARCHAR);
-            }
-            if (personnage.getEquipementDefensif() != null) {
-                preparedStatement.setString(6, personnage.getEquipementDefensif());
-            } else {
-                preparedStatement.setNull(6, Types.VARCHAR);
-            }
-            preparedStatement.executeUpdate();
+             PreparedStatement stmt = connection.prepareStatement(req)) {
+            stmt.setString(1, personnage.getType());
+            stmt.setString(2, personnage.getName());
+            stmt.setInt(3, personnage.getPv());
+            stmt.setInt(4, personnage.getDamage());
+            stmt.setString(5, personnage.getEquipementOffensif());
+            stmt.setString(6, personnage.getEquipementDefensif());
+            stmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Erreur lors de l'exécution de la requête : " + e.getMessage());
             throw e;
         }
     }
 
-    public void updateHero(Personnage personnage) throws SQLException {
-        String req = "UPDATE Hero SET Type = ?, NiveauVie = ?, NiveauForce = ?, Offensif = ?, Defensif = ? WHERE Nom = ?";
-        try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(req)) {
-            preparedStatement.setString(1, personnage.getType());
-            preparedStatement.setInt(2, personnage.getPv());
-            preparedStatement.setInt(3, personnage.getDamage());
-
-            if (personnage.getEquipementOffensif() != null) {
-                preparedStatement.setString(4, personnage.getEquipementOffensif());
-            } else {
-                preparedStatement.setNull(4, Types.VARCHAR);
-            }
-            if (personnage.getEquipementDefensif() != null) {
-                preparedStatement.setString(5, personnage.getEquipementDefensif());
-            } else {
-                preparedStatement.setNull(5, Types.VARCHAR);
-            }
-            preparedStatement.setString(6, personnage.getName());
-
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.err.println("Erreur lors de l'exécution de la requête : " + e.getMessage());
-            throw e;
-        }
-    }
-
-    void updateHeroInDatabase(String oldName, String newName, String type,int niveauVie,int niveauForce,String offensif,String defensif) throws SQLException {
-        String updateQuery = "UPDATE Hero SET Nom = ?, Type = ? ,NiveauVie = ? ,NiveauForce = ? , Offensif = ? ,Defensif = ? WHERE UPPER(Nom) = ?";
+    void updateHero(String oldName, String newName, String type,int niveauVie,int niveauForce,String offensif,String defensif) throws SQLException {
+        String req = "UPDATE Hero SET Nom = ?, Type = ? ,NiveauVie = ? ,NiveauForce = ? , Offensif = ? ,Defensif = ? WHERE UPPER(Nom) = ?";
         try (Connection conn = this.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(updateQuery)) {
-
+             PreparedStatement stmt = conn.prepareStatement(req)) {
             stmt.setString(1, newName);
             stmt.setString(2, type);
             stmt.setInt(3,niveauVie);
@@ -135,11 +92,16 @@ public class DataBase {
             stmt.setString(5,offensif);
             stmt.setString(6,defensif);
             stmt.setString(7, oldName);
-
-
             stmt.executeUpdate();
         }
+        catch (SQLException e) {
+            System.err.println("Erreur lors de l'exécution de la requête : " + e.getMessage());
+            throw e;
+        }
     }
+
+
+
     boolean isHeroExists(String name) throws SQLException {
         String query = "SELECT COUNT(*) FROM Hero WHERE UPPER(Nom) = ?";
         try (Connection conn = this.getConnection();
