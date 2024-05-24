@@ -1,5 +1,6 @@
 package jeu.lancement;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import jeu.PersonnageHorsPlateauException;
@@ -12,9 +13,12 @@ public class Menu {
 
     private Personnage personnage;
     private Scanner scanner;
+    private DataBase dataBase;
+
 
     public Menu() {
         this.scanner = new Scanner(System.in);
+        this.dataBase = new DataBase(); // Initialisation de l'objet dataBase
     }
 
     // MENU
@@ -94,8 +98,17 @@ public class Menu {
                 break;
         }
 
-        // Afficher un message de confirmation
+
         System.out.println("Vous êtes maintenant un " + personnage.getType());
+
+        // Enregistrer le personnage dans la base de données
+        try {
+            dataBase.createHero(personnage);
+            System.out.println("Le personnage a été enregistré dans la base de données.");
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de l'enregistrement du personnage dans la base de données.");
+            e.printStackTrace();
+        }
     }
 
 
