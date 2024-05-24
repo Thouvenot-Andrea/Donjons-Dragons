@@ -1,12 +1,15 @@
 import jeu.PersonnageHorsPlateauException;
+import jeu.lancement.DataBase;
 import jeu.lancement.Game;
 import jeu.lancement.Menu;
 import jeu.personnages.Personnage;
 import jeu.plateau.Plateau;
 
+import java.sql.SQLException;
+
 
 public class Main {
-    public static void main(String[] args) throws PersonnageHorsPlateauException {
+    public static void main(String[] args) throws PersonnageHorsPlateauException, SQLException {
 
         Menu menu = new Menu();
         menu.display("Bienvenue dans Donjons & Dragons !");
@@ -29,7 +32,12 @@ public class Main {
                 menu.thanks("Merci d'avoir joué :)");
             }
         }
-
     }
 }
+
+
+
+
+
+
 

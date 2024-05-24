@@ -8,6 +8,7 @@ public class Personnage {
     private String type;
     private String equipementOffensif;
     private String equipementDefensif;
+    private int id;
 
     //constructor
     public Personnage() {
@@ -27,6 +28,22 @@ public class Personnage {
 
     }
 
+    public Personnage(int id, String name, String type) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+    }
+
+    public Personnage(int id, String nom, String type, int niveauVie, int niveauForce, String offensif, String defensif) {
+        this.id = id;
+        this.name = nom;
+        this.type = type;
+        this.pv = niveauVie;
+        this.damage = niveauForce;
+        this.equipementOffensif = offensif;
+        this.equipementDefensif = defensif;
+    }
+
 
     //name ( Getter et Setter)
     public String getName() {
@@ -37,6 +54,13 @@ public class Personnage {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     // pv ( Getter et Setter)
     public int getPv() {
@@ -44,7 +68,7 @@ public class Personnage {
     }
 
     public void setPv(int pv) {
-            this.pv = pv;
+        this.pv = pv;
     }
 
 
